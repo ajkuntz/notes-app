@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    Notes Entry
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="note-entry">Enter note:</label>
+      <textarea class="form-control" id="note-entry" [(ngModel)]="note" required rows="4"></textarea>
+      <button class="my-2 btn btn-primary" (click)="addNote()">Add Note</button>
+      <div *ngIf="enteredNote" class="my-3">The note entered was:<br />{{enteredNote}}</div>
+    </div>
+  </div>
+</div>
+
+
