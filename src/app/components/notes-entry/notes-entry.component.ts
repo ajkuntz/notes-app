@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-notes-entry',
@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notes-entry.component.css']
 })
 export class NotesEntryComponent implements OnInit {
-  public note: string;
+  @Output() updateNote: EventEmitter<string> = new EventEmitter();
 
-  public enteredNote: string;
+  public note: string;
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class NotesEntryComponent implements OnInit {
   }
 
   public addNote() {
-    this.enteredNote = this.note;
+    this.updateNote.emit(this.note);
     this.note = '';
   }
 }

@@ -7,10 +7,10 @@
   </div>
   <div class="row">
     <div class="col-6">
-      <app-notes-display></app-notes-display>
+      <app-notes-display [notes]="notes"></app-notes-display>
     </div>
     <div class="col-6">
-      <app-notes-entry></app-notes-entry>
+      <app-notes-entry (updateNote)="noteUpdated($event)"></app-notes-entry>
     </div>
   </div>
 </div>  

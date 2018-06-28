@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-notes-display',
@@ -6,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notes-display.component.css']
 })
 export class NotesDisplayComponent implements OnInit {
-  public notes: string[] = ['Test note 1', 'Test note 2'];
+  @Input() notes: string[];
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }
